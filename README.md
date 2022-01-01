@@ -1,8 +1,5 @@
-# Conda Packaging Template
+# NEMO-package
 
-This template repository contains a default setup for building new conda packages via agithub action.
+NEMO is a laboratory logistics web application. Use it to schedule reservations, control tool access, track maintenance issues, and more made by NIST.
 
-## Contents
-
-1. A github action to build conda packages and upload them for MacOS-X, Linux, Windows 74bit pythons v 3/6-3.9
-2. A build environment
+This is an experimental conda package for it,
