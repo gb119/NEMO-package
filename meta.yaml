@@ -63,7 +63,7 @@ about:
   home: "https://github.com/usnistgov/NEMO"
   license: Public domain
   license_family: PUBLIC-DOMAIN
-  license_file: LICENSE,md
+  license_file: LICENSE.md
   summary: "NEMO is a laboratory logistics web application. Use it to schedule reservations, control tool access, track maintenance issues, and more."
   doc_url: https://github.com/usnistgov/NEMO/wiki
   dev_url: https://github.com/usnistgov/NEMO
