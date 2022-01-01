@@ -1,0 +1,73 @@
+{% set name = "NEMO" %}
+{% set version = "3.13.3" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 7e3efd5d56cea54a2d7b00b798b85a9a899680518dc83398c45025864a071dcf
+
+build:
+  number: 0
+  entry_points:
+    - nemo=NEMO.provisioning:entry_point
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - cryptography >=3.4.7
+    - django >=2.2.24
+    - django-filter >=2.4.0
+    - django-mptt <=0.12.0
+    - djangorestframework >=3.12.4
+    - drf-flex-fields >=0.9.3
+    - drf-renderer-xlsx >=0.4.1
+    - ldap3 >=2.9
+    - pillow >=8.3.2
+    - pip
+    - python
+    - python-dateutil >=2.8.1
+    - requests >=2.25.1
+  run:
+    - cryptography >=3.4.7
+    - django >=2.2.24
+    - django-filter >=2.4.0
+    - django-mptt >=0.12.0
+    - djangorestframework >=3.12.4
+    - drf-flex-fields >=0.9.3
+    - drf-renderer-xlsx >=0.4.1
+    - ldap3 >=2.9
+    - pillow >=8.3.2
+    - python
+    - python-dateutil >=2.8.1
+    - requests >=2.25.1
+
+test:
+  imports:
+    - NEMO
+    - NEMO.apps
+    - NEMO.apps.area_access
+    - NEMO.apps.kiosk
+    - NEMO.management
+    - NEMO.management.commands
+    - NEMO.migrations
+    - NEMO.templatetags
+    - NEMO.views
+    - NEMO.widgets
+  commands:
+    - nemo --help
+
+about:
+  home: "https://github.com/usnistgov/NEMO"
+  license: Public domain
+  license_family: PUBLIC-DOMAIN
+  license_file: LICENSE,md
+  summary: "NEMO is a laboratory logistics web application. Use it to schedule reservations, control tool access, track maintenance issues, and more."
+  doc_url: https://github.com/usnistgov/NEMO/wiki
+  dev_url: https://github.com/usnistgov/NEMO
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
